@@ -1,0 +1,1044 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins, sans-serif;
+}
+
+.navbar-brand {
+    font-size: 26px;
+}
+
+.navbar-brand span {
+    color: red;
+}
+
+.collapse {
+    display: grid;
+    justify-content: space-around;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    display: inline-block;
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    width: 0;
+    height: 2px;
+    background: red;
+    transition: 0.5s;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link {
+    margin: 0 0.5rem;
+}
+
+.booktab button {
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    background-color: red;
+    padding: 0.4rem 1.5rem;
+}
+
+.booktab button:hover {
+    background-color: rgb(248, 58, 58);
+    transition: 0.5s;
+}
+
+.bannerdt {
+    background-color: #d7d6d6;
+}
+
+.bookbtn button {
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    background-color: red;
+    padding: 0.4rem 1.5rem;
+}
+
+.bookbtn button:hover {
+    background-color: rgb(248, 58, 58);
+    transition: 0.5s;
+}
+
+.bookbtn a {
+    color: #1f1f1f;
+    margin: 0 0 0 2rem;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.bookbtn a:hover {
+    color: red;
+    transition: 0.5s;
+}
+
+.bookbtn a span i {
+    color: red;
+    font-size: 28px;
+    margin-top: 16px;
+}
+
+.booktb h1 {
+    font-family: cursive;
+    line-height: 60px;
+    font-weight: 400;
+}
+
+.booktb p {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.booktb {
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+.fdplate img {
+    width: 100%;
+    height: 100%;
+}
+
+.fdplate {
+    width: 450px;
+    height: 450px;
+    margin: 2.5rem 0;
+    animation: rotate 50s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.abtushead {
+    text-align: center;
+    margin: 1.5rem 0;
+    line-height: 30px;
+}
+
+.abtushead h2 {
+    font-family: cursive;
+    font-size: 26px;
+}
+
+.abtushead span {
+    color: rgb(190, 4, 4);
+    font-family: cursive;
+}
+
+.restimg img {
+    width: 100%;
+    height: auto;
+}
+
+.restimg {
+    width: 490px;
+    height: auto;
+    margin: 1.5rem;
+}
+
+.bookatb {
+    text-align: center;
+    border: 4px solid rgba(82, 82, 82, 0.559);
+    margin: 2rem 0;
+    padding: 1rem;
+}
+
+.bookatb h2 {
+    color: rgb(205, 2, 2);
+}
+
+.abtscint {
+    margin: 1.5rem;
+    width: 500px;
+    height: auto;
+}
+
+.abtscint h5 {
+    color: #707070;
+    font-size: 16px;
+    font-family: poppins, sans-serif;
+    font-style: italic;
+}
+
+.abtscint p span {
+    font-size: 20px !important;
+    margin-right: 1rem;
+}
+
+.abtscint p {
+    font-size: 16px !important;
+    margin-left: 2rem;
+}
+
+.abtscint img {
+    width: 100%;
+    height: auto;
+}
+
+.chyummcard {
+    background-color: #e7e7e7;
+    margin: 2rem 0;
+}
+
+.choscard {
+    margin: 2.5rem 0;
+    color: #fff;
+    background-color: #ce1212;
+    padding: 1.5rem;
+}
+
+.choscard h3 {
+    font-weight: bolder;
+}
+
+.chyumlm button {
+    padding: 0.3rem 1rem;
+    border: none;
+    margin: 0 3rem;
+    border-radius: 20px;
+    color: #fff;
+    background-color: #dc3545;
+}
+
+.chyumlm button:hover {
+    color: #dc3545;
+    background-color: #ffffff;
+    transition: 0.8s;
+}
+
+.card1 {
+    height: 74vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5rem 0;
+    background-color: #fff;
+    text-align: center;
+    padding: 2.6rem 1.5rem;
+}
+
+.card1 h3 span {
+    background-color: #faf0f0;
+    font-size: 40px;
+    padding: 0.8rem 1rem;
+    border-radius: 50%;
+    color: red;
+}
+
+.card1 span:hover {
+    background-color: #e44646;
+    font-size: 40px;
+    padding: 0.8rem 1rem;
+    border-radius: 50%;
+    color: rgb(255, 255, 255);
+    transition: 0.8s;
+}
+
+.txtbgimg {
+    width: 100%;
+    min-height: 60vh;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 50px 0;
+    background-image: url("https://themewagon.github.io/yummy-red/assets/img/stats-bg.jpg");
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+/* .txtbgimg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    text-align: center;
+    background-image: url("https://themewagon.github.io/yummy-red/assets/img/stats-bg.jpg");
+    background-repeat: no-repeat;
+    object-fit: cover;
+    filter: blur(8px);
+    transform: scale(1.1);
+    z-index: -1;
+} */
+
+*/ .txtbgimg .container {
+    background-color: #00000085;
+}
+
+.menudata {
+    margin: 2rem 0;
+    text-align: center;
+    display: flex;
+    text-align: center;
+}
+
+.menushd p {
+    color: #707070;
+}
+
+.menushd h2 {
+    font-family: cursive;
+}
+
+.menushd span {
+    color: #dc3545;
+    font-family: cursive;
+}
+
+.menutab a {
+    margin: 0 1rem;
+    padding: 0.8rem 0;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid #f7bbc1;
+}
+
+.menutab a:hover {
+    transition: 0.5s;
+    border-bottom: 2px solid #f67481;
+}
+
+.menus {
+    margin: 2rem 0;
+}
+
+.menus p {
+    color: #707070;
+}
+
+.menus h1 {
+    color: #f42338;
+    font-family: cursive;
+}
+
+.menu1 {
+    width: 270px;
+    height: auto;
+    margin-top: 1rem;
+}
+
+.menu1 p {
+    color: #707070;
+}
+
+.menu1 h4 {
+    margin: 1rem 0.5rem;
+}
+
+.menu1 h5 {
+    color: #be0f0f;
+    font-weight: 600;
+}
+
+.menu1 img {
+    width: 100%;
+    height: auto;
+}
+
+.menu2 {
+    width: 270px;
+    height: auto;
+    margin-top: 1rem;
+}
+
+.menu2 p {
+    color: #707070;
+}
+
+.menu2 h4 {
+    margin: 1rem 0.5rem;
+}
+
+.menu2 h5 {
+    color: #be0f0f;
+    font-weight: 600;
+}
+
+.menu2 img {
+    width: 100%;
+    height: auto;
+}
+
+.menu3 {
+    width: 270px;
+    height: auto;
+    margin-top: 1rem;
+}
+
+.menu3 p {
+    color: #707070;
+}
+
+.menu3 h4 {
+    margin: 1rem 0.5rem;
+}
+
+.menu3 h5 {
+    color: #be0f0f;
+    font-weight: 600;
+}
+
+.menu3 img {
+    width: 100%;
+    height: auto;
+}
+
+.peopletextm {
+    margin: 2rem 0;
+    background-color: #e8e8e8;
+    padding: 2rem 0;
+}
+
+.tesimonialdt {
+    text-align: center;
+    color: #656565;
+}
+
+.tesimonialdt h2 {
+    color: #1f1f1f;
+    font-family: cursive;
+}
+
+.tesimonialdt span {
+    color: #be0f0f;
+    font-family: cursive;
+}
+
+.testimcomment {
+    margin: 3rem 4.5rem;
+}
+
+.testimcomment p {
+    font-style: italic;
+}
+
+.testimcomment h5 {
+    font-family: cursive;
+    font-size: 16px;
+}
+
+.testimcomment h4 {
+    font-size: 18px;
+}
+
+.testimcomment h6 {
+    color: #9a9a9a;
+    font-family: cursive;
+}
+
+.slideimg {
+    width: 200px;
+    height: auto;
+}
+
+.slideimg img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.eventdata {
+    margin: 2.5rem 0;
+}
+
+.event1 {
+    width: 410px;
+    height: 404px;
+    background-repeat: no-repeat;
+    background-size: 412px auto;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgqQScaiYx6f6voVtMOyLySkBi0Urbs_gNkw&s");
+}
+
+.event1 {
+    position: relative;
+}
+
+.bthevent {
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2.5rem 2rem 0 1rem;
+}
+
+.bthevent h6 {
+    font-family: cursive;
+}
+
+.bthevent h2 {
+    width: 20%;
+    font-weight: bold;
+    border-bottom: 3px solid rgb(216, 2, 2);
+}
+
+
+
+.event2 {
+    width: 410px;
+    height: 404px;
+    background-repeat: no-repeat;
+    background-size: 412px auto;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8rqHqXpjTVzdwsLy1r7fiRnySGQmnQMrboQ&s");
+}
+
+.event2 {
+    position: relative;
+}
+
+.weddevent {
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2.5rem 2rem 0 1rem;
+}
+
+.weddevent h6 {
+    font-family: cursive;
+}
+
+.weddevent h2 {
+    width: 20%;
+    font-weight: bold;
+    border-bottom: 3px solid rgb(216, 2, 2);
+}
+
+
+.event3 {
+    width: 410px;
+    height: 404px;
+    background-repeat: no-repeat;
+    background-size: 412px auto;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaIxVMJbjNSo6R6j7wInjFXLFeG8_5A5LRLA&s");
+}
+
+.event3 {
+    position: relative;
+}
+
+.custevent {
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2.5rem 2rem 0 1rem;
+}
+
+.custevent h6 {
+    font-family: cursive;
+}
+
+.custevent h2 {
+    width: 20%;
+    font-weight: bold;
+    border-bottom: 3px solid rgb(216, 2, 2);
+}
+
+.chefsdata {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.chef1 {
+    margin: 0 1rem 1rem 1rem;
+}
+
+.chef2 {
+    margin: 0 1rem 1rem 1rem;
+}
+
+.chef3 {
+    margin: 0 1rem 1rem 1rem;
+}
+
+.schefhd p {
+    color: #707070;
+}
+
+.schefhd h2 {
+    font-family: cursive;
+    margin: 0 0 3rem 0;
+}
+
+.schefhd span {
+    font-family: cursive;
+    color: #be0f0f;
+}
+
+.chefcard {
+    margin: 2rem 0;
+}
+
+.chcard1 {
+    width: 356px;
+    height: auto;
+    background-color: #e5e5e5;
+    border-radius: 10px;
+    padding: 1rem;
+    transition: 0.7s;
+}
+
+.chcard1 p {
+    color: #393939;
+    font-style: italic;
+}
+
+.chcard1:hover {
+    transform: scale(1.1);
+}
+
+.chcard1 img {
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    padding: 0.5rem;
+}
+
+.chcard1 img:hover {
+    border: 1px solid #b9b8b8;
+}
+
+.chcard1 span {
+    color: #787878;
+}
+
+.smedia a {
+    color: #2c2c2cdd;
+    margin: 0 0.2rem;
+    font-size: 1.3rem;
+}
+
+.smedia a:hover {
+    color: #252525;
+}
+
+.bktabl {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.bktabl p {
+    color: #656565;
+}
+
+.bktabl h2 {
+    font-family: cursive;
+}
+
+.bktabl span {
+    color: #be0f0f;
+    font-family: cursive;
+}
+
+.bookatable {
+    margin: 2rem 0;
+}
+
+.booktabimg {
+    width: 356px;
+    height: 470px;
+}
+
+.booktabimg img {
+    width: 100%;
+    height: 100%;
+}
+
+input {
+    width: 28%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+textarea {
+    width: 96%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.submit-btn {
+    text-align: center;
+}
+
+.submit-btn button {
+    padding: 0.5rem 3rem;
+    background: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.submit-btn button:hover {
+    background: #b30000;
+}
+
+form input {
+    margin: 0.5rem 1rem;
+}
+
+form textarea {
+    margin: 0.5rem 1rem;
+}
+
+.gallhd {
+    text-align: center;
+    margin: 0 0 2rem 0;
+}
+
+.gallhd p {
+    color: #656565;
+}
+
+.gallhd h2 {
+    font-family: cursive;
+}
+
+.gallhd span {
+    color: #be0f0f;
+    font-family: cursive;
+}
+
+.gallerydata {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    background: #f4f4f4;
+}
+
+.carousel-track {
+    display: flex;
+}
+
+.slide {
+    min-width: calc(100% / 5);
+    padding: 10px;
+}
+
+.slide img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.conthd {
+    text-align: center;
+    margin: 0 0 2rem 0;
+}
+
+.conthd p {
+    color: #656565;
+}
+
+.conthd h2 {
+    font-family: cursive;
+}
+
+.conthd span {
+    color: #be0f0f;
+    font-family: cursive;
+}
+
+.gmap iframe {
+    width: 100%;
+}
+
+.contactdt {
+    margin: 2rem 0 0 0;
+}
+
+.addbox {
+    background-color: #fcfcfc;
+    display: flex;
+    margin: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 16px #242424;
+    padding: 0 2rem;
+    align-items: center;
+}
+
+.addbox span {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    background-color: red;
+    color: white;
+}
+
+.addcont {
+    margin: 1.5rem 1.5rem 0 2rem;
+}
+
+.callbox {
+    background-color: #fcfcfc;
+    display: flex;
+    margin: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 16px #242424;
+    padding: 0 2rem;
+    align-items: center;
+}
+
+.callbox span {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    background-color: red;
+    color: white;
+}
+
+.callcont {
+    margin: 1.5rem 1.5rem 0 2rem;
+}
+
+
+.emailbox {
+    background-color: #fcfcfc;
+    display: flex;
+    margin: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 16px #242424;
+    padding: 0 2rem;
+    align-items: center;
+}
+
+.emailbox span {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    background-color: red;
+    color: white;
+}
+
+.emailcont {
+    margin: 1.5rem 1.5rem 0 2rem;
+}
+
+
+.timming {
+    background-color: #fcfcfc;
+    display: flex;
+    margin: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 16px #242424;
+    padding: 0 2rem;
+    align-items: center;
+}
+
+.timming span {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    background-color: red;
+    color: white;
+}
+
+.timehour {
+    margin: 1.5rem 1.5rem 0 2rem;
+}
+
+.feedbackdata {
+    background-color: #dbdada;
+    margin: 1.5rem 0;
+    padding: 2rem;
+}
+
+.formdata input {
+    width: 546px;
+    padding: 10px;
+    box-shadow: 0 0 10px #00000080;
+    border: 1px solid #d7d7d7;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.subjectdt {
+    width: 100%;
+    box-shadow: 0 0 10px #00000080;
+    padding: 10px;
+    border: 1px solid #dfdede;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.subtxtarea textarea {
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 0 10px #00000080;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.submit-btn {
+    text-align: center;
+}
+
+.submit-btn button {
+    padding: 0.5rem 3rem;
+    background: #ff0000;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.submit-btn button:hover {
+    background: #b30000;
+}
+
+form input {
+    margin: 1rem 0;
+}
+
+form textarea {
+    margin: 1rem 0;
+}
+
+#name,
+#emaild,
+#msgError {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.footaddrbox {
+    display: flex;
+}
+
+.footaddrbox span {
+    color: #b30000;
+    font-size: 24px;
+}
+
+.footaddcont {
+    margin-left: 1.5rem;
+}
+
+.footaddcont h6 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.footerdata {
+    color: #fff;
+    background-color: #1f1f24;
+    padding: 2rem;
+}
+
+.footcallbox {
+    display: flex;
+}
+
+.footcallbox span {
+    color: #b30000;
+    font-size: 24px;
+}
+
+.fcallmailcont {
+    margin-left: 1.5rem;
+}
+
+.fcallmailcont h6 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.foothourcont {
+    display: flex;
+}
+
+.foothourcont span {
+    color: #b30000;
+    font-size: 24px;
+}
+
+.foothour {
+    margin-left: 1.5rem;
+}
+
+.foothour h6 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.socialmedia a i {
+    color: #b30000;
+    font-size: 24px;
+    margin-right: 1rem;
+}
+
+.socialmedia a i:hover {
+    color: #810000;
+}
+
+.sociallinks h6 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.footercopyr {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.footercopyr p a {
+    color: #b30000;
+    text-decoration: none;
+}
+
+.footercopyr p a:hover {
+    color: #910000;
+}
