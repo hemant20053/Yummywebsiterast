@@ -254,11 +254,10 @@
     transition: 0.8s;
 }
 
-.txtbgimg {
+.bgdark {
     width: 100%;
-    min-height: 60vh;
+    min-height: 74vh;
     text-align: center;
-    background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     padding: 50px 0;
@@ -267,21 +266,32 @@
     object-fit: cover;
 }
 
-/* .txtbgimg::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    text-align: center;
-    background-image: url("https://themewagon.github.io/yummy-red/assets/img/stats-bg.jpg");
-    background-repeat: no-repeat;
-    object-fit: cover;
-    filter: blur(8px);
-    transform: scale(1.1);
-    z-index: -1;
-} */
+.bgdark .row {
+    background-color: #00000070;
+}
 
-*/ .txtbgimg .container {
-    background-color: #00000085;
+.cl232 {
+    color: #fff;
+    margin: 4rem 0;
+}
+
+.pr521 {
+    color: #fff;
+    margin: 4rem 0;
+}
+
+.hrsp1453 {
+    color: #fff;
+    margin: 4rem 0;
+}
+
+.work32 {
+    color: #fff;
+    margin: 4rem 0;
+}
+
+.txtbgimg .container {
+    background-color: #0000002c;
 }
 
 .menudata {
@@ -741,8 +751,13 @@ form textarea {
 }
 
 .slide {
-    min-width: calc(100% / 5);
-    padding: 10px;
+    transition: 0.5s ease-in;
+    padding: 10px 0;
+    margin: 0 1rem;
+}
+
+.slide:hover {
+    transform: scale(1.1);
 }
 
 .slide img {
@@ -947,11 +962,22 @@ form textarea {
     margin-top: 5px;
 }
 
+.footerdata {
+    color: #fff;
+    background-color: #1f1f24;
+    padding: 2rem;
+}
+
+.foterdata {
+    margin: 2rem 0;
+}
+
 .footaddrbox {
     display: flex;
 }
 
 .footaddrbox span {
+    margin-top: 1.5rem;
     color: #b30000;
     font-size: 24px;
 }
@@ -961,14 +987,9 @@ form textarea {
 }
 
 .footaddcont h6 {
+    margin-bottom: 1rem;
     font-size: 1.1rem;
     font-weight: 600;
-}
-
-.footerdata {
-    color: #fff;
-    background-color: #1f1f24;
-    padding: 2rem;
 }
 
 .footcallbox {
@@ -976,6 +997,7 @@ form textarea {
 }
 
 .footcallbox span {
+    margin-top: 2rem;
     color: #b30000;
     font-size: 24px;
 }
@@ -985,6 +1007,7 @@ form textarea {
 }
 
 .fcallmailcont h6 {
+    margin-bottom: 1rem;
     font-size: 1.1rem;
     font-weight: 600;
 }
@@ -994,6 +1017,7 @@ form textarea {
 }
 
 .foothourcont span {
+    margin-top: 2rem;
     color: #b30000;
     font-size: 24px;
 }
@@ -1003,6 +1027,7 @@ form textarea {
 }
 
 .foothour h6 {
+    margin-bottom: 1rem;
     font-size: 1.1rem;
     font-weight: 600;
 }
@@ -1015,6 +1040,12 @@ form textarea {
 
 .socialmedia a i:hover {
     color: #810000;
+}
+
+.socialmedia h6 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 .sociallinks h6 {
