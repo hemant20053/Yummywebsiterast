@@ -474,22 +474,59 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="booktabform" data-aos="fade-up" data-aos-duration="1500">
-                        <form action="yummywebbt.php" method="post">
+                        <form action="yummywebbt.php" method="post" onsubmit="return SubmitForm()">
 
-                            <input type="text" id="fname" placeholder="Enter your full name" name="fulname">
-                            <input type="email" id="emaildt" placeholder="Enter your email" name="emaild">
-                            <input type="tel" id="phone" placeholder="Enter your phone number" name="phonenum">
-                            <input type="date" id="date" name="date">
-                            <input type="time" id="time" name="time">
-                            <input type="number" id="pnum" min="1" placeholder="Enter number of people" name="pnumber">
-                            <br><br>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="fulname">
+                                        <span id="nameError" class="error"></span>
+                                        <input type="text" id="fname" placeholder="Enter your full name" name="fulname">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="emaildata">
+                                        <span id="emailError" class="error"></span>
+                                        <input type="email" id="emaildt" placeholder="Enter your email" name="emaild">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="phonenumb">
+                                        <span id="phonError" class="error"></span>
+                                        <input type="tel" id="phonenum" placeholder="Enter your phone number"
+                                            name="phonenum">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="datedata">
+                                        <span id="dateError" class="error"></span>
+                                        <input type="date" id="date" name="date">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="timedata">
+                                        <span id="timeError" class="error"></span>
+                                        <input type="time" id="time" name="time">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="peonumb">
+                                        <span id="penumError" class="error"></span>
+                                        <input type="number" id="peonumb" min="1" placeholder="Enter number of people"
+                                            name="pnumber"><br><br>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <span id="msgError" class="error"></span>
                             <textarea placeholder="Write your message here..." rows="4" cols="50"
                                 name="message"></textarea>
 
                             <div class="submit-btn">
-                                <button type="submit" onsubmit="SubmitForm()">Submit</button>
+                                <button type="submit">Submit</button>
                             </div>
-
                         </form>
                     </div>
                 </div>
@@ -599,22 +636,24 @@
                     <div class="col-lg-6">
                         <div class="formdata">
                             <input id="fulName" type="text" placeholder="Enter your full name" name="flname">
-                            <div id="name"></div>
+                            <span id="nameError" class="error"></span>
                         </div>
                     </div>
 
                     <div class="col-lg-6">
                         <div class="formdata">
                             <input type="email" id="emaildat" placeholder="Enter your email" name="emaildata">
-                            <div id="emaild"></div>
+                            <span id="emailError" class="error"></span>
                         </div>
                     </div>
                 </div>
 
                 <div class="subtxtarea">
                     <input class="subjectdt" id="subject" type="text" placeholder="Subject" name="subject">
+                    <span id="subjectError" class="error"></span>
+
                     <textarea id="message" name="message" placeholder="Write your message here..." rows="5"></textarea>
-                    <div id="msgError"></div>
+                    <span id="messageError" class="error"></span>
                 </div>
 
                 <div class="submit-btn">
@@ -680,51 +719,134 @@
 
 
     <script>
+
+        // Feedback form
+
         function Submitdata() {
-            let fullName = document.getElementById("fulName").value.trim();
+
+            let fullname = document.getElementById("fulName").value.trim();
             let email = document.getElementById("emaildat").value.trim();
             let subject = document.getElementById("subject").value.trim();
             let message = document.getElementById("message").value.trim();
 
+            // Error Clear
+            document.getElementById("nameError").innerHTML = "";
+            document.getElementById("emailError").innerHTML = "";
+            document.getElementById("subjectError").innerHTML = "";
+            document.getElementById("messageError").innerHTML = "";
+
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
             let isValid = true;
 
-            document.getElementById("name").innerHTML = "";
-            document.getElementById("emaild").innerHTML = "";
-            document.getElementById("msgError").innerHTML = "";
-
-            if (fullName === "") {
-                document.getElementById("name").innerHTML = "Full name is required";
-                isValid = false;
-            }
-            if (fullName === "") {
-                document.getElementById("name").innerHTML = "Full name is required";
+            // Name Validation
+            if (fullname == "") {
+                document.getElementById("nameError").innerHTML = "Please enter your name";
                 isValid = false;
             }
 
             // Email Validation
-            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            if (email === "") {
-                document.getElementById("emaild").innerHTML = "Email is required";
+            if (email == "") {
+                document.getElementById("emailError").innerHTML = "Please enter your email";
                 isValid = false;
             } else if (!emailPattern.test(email)) {
-                document.getElementById("emaild").innerHTML = "Enter a valid email";
+                document.getElementById("emailError").innerHTML = "Invalid email address";
                 isValid = false;
             }
 
             // Subject Validation
-            if (subject === "") {
-                document.getElementById("msgError").innerHTML = "Subject is required";
+            if (subject == "") {
+                document.getElementById("subjectError").innerHTML = "Please enter subject";
                 isValid = false;
             }
 
             // Message Validation
-            if (message === "") {
-                document.getElementById("msgError").innerHTML += "<br>Message is required";
+            if (message == "") {
+                document.getElementById("messageError").innerHTML = "Please enter message";
                 isValid = false;
             }
 
-            return isValid; // Form submits only if true
+            return isValid;
+        }
+
+        // Book a Table form
+
+        function SubmitForm() {
+
+            let name = document.getElementById("fname").value.trim();
+            let email = document.getElementById("emaildt").value.trim();
+            let phone = document.getElementById("phonenum").value.trim();
+            let date = document.getElementById("date").value;
+            let time = document.getElementById("time").value;
+            let people = document.getElementById("peonumb").value;
+            let message = document.getElementById("message").value.trim();
+
+            let isValid = true;
+
+            document.getElementById("nameError").innerHTML = "";
+            document.getElementById("emailError").innerHTML = "";
+            document.getElementById("phonError").innerHTML = "";
+            document.getElementById("dateError").innerHTML = "";
+            document.getElementById("timeError").innerHTML = "";
+            document.getElementById("numError").innerHTML = "";
+            document.getElementById("msgError").innerHTML = "";
+
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let phonePattern = /^[0-9]{10}$/;
+
+            // Name
+            if (name == "") {
+                document.getElementById("nameError").innerHTML = "Please enter your full name.";
+                isValid = false;
+            }
+
+            // Email
+            if (email == "") {
+                document.getElementById("emailError").innerHTML = "Please enter your email.";
+                isValid = false;
+            }
+
+            if (!emailPattern.test(email)) {
+                document.getElementById("emailError").innerHTML = "Please enter a valid email.";
+                isValid = false;
+            }
+
+            // Phone
+            if (phone == "") {
+                document.getElementById("phonError").innerHTML = "Please enter your phone number.";
+                isValid = false;
+            }
+
+            if (!phonePattern.test(phone)) {
+                document.getElementById("phonError").innerHTML = "Phone number must be 10 digits.";
+                isValid = false;
+            }
+
+            // Date
+            if (date == "") {
+                document.getElementById("dateError").innerHTML = "Please select a date.";
+                isValid = false;
+            }
+
+            // Time
+            if (time == "") {
+                document.getElementById("timeError").innerHTML = "Please select a time.";
+                isValid = false;
+            }
+
+            // People
+            if (people == "" || people <= 0) {
+                document.getElementById("numError").innerHTML = "Please enter number of people.";
+                isValid = false;
+            }
+
+            // Message
+            if (message == "") {
+                document.getElementById("msgError").innerHTML = "Please enter your message.";
+                isValid = false;
+            }
+
+            isValid = true;
         }
     </script>
 

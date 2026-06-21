@@ -5,7 +5,7 @@ $emaildata = $_POST['emaild'];
 $phonenum = $_POST['phonenum'];
 $date = $_POST['date'];
 $time = $_POST['time'];
-$phonenum = $_POST['pnumber'];
+$peonum = $_POST['pnumber'];
 $message = $_POST['message'];
 
 
@@ -22,7 +22,7 @@ if (!$conn) {
 }
 
 $sql = "INSERT INTO yummywebbtb (fulname, emaild, phonenum, date, time, pnumber, message)
-VALUES ('$funame', '$emaildata', '$phonenum','$date','$time', '$phonenum', '$message')";
+VALUES ('$funame', '$emaildata', '$phonenum','$date','$time', '$peonum', '$message')";
 
 if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";
