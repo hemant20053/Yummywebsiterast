@@ -73,22 +73,32 @@
     transition: 0.5s;
 }
 
-.bookbtn a {
-    color: #1f1f1f;
-    margin: 0 0 0 2rem;
-    text-decoration: none;
+.bookbtn {
+    display: flex;
+    align-items: center;
     font-size: 16px;
 }
 
-.bookbtn a:hover {
-    color: red;
-    transition: 0.5s;
+.learnmr {
+    font-size: 24px;
+    padding-top: 0.3rem;
+    margin-left: 1.5rem;
 }
 
-.bookbtn a span i {
+.learnmr span i {
     color: red;
-    font-size: 28px;
-    margin-top: 16px;
+}
+
+.learnmr a {
+    color: #1f1f1f;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.learnmr a:hover {
+    color: red;
+    transition: 0.5s;
 }
 
 .booktb h1 {
@@ -131,7 +141,7 @@
 
 .abtushead {
     text-align: center;
-    margin: 1.5rem 0;
+    margin: 2.5rem 0;
     line-height: 30px;
 }
 
@@ -195,6 +205,28 @@
     height: auto;
 }
 
+.aboutimg {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://bootstrapmade.com/content/demo/Yummy/assets/img/about-2.jpg');
+}
+
+.playicon {
+    width: 50px;
+    height: 54px;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    background-color: red;
+}
+
+.playicon a {
+    color: #fff;
+}
+
 .chyummcard {
     background-color: #e7e7e7;
     margin: 2rem 0;
@@ -245,13 +277,16 @@
     color: red;
 }
 
-.card1 span:hover {
-    background-color: #e44646;
-    font-size: 40px;
-    padding: 0.8rem 1rem;
-    border-radius: 50%;
-    color: rgb(255, 255, 255);
-    transition: 0.8s;
+.card1:hover {
+
+    .dmicon {
+        transition: 0.6s ease-in;
+        background-color: #e44646;
+        font-size: 40px;
+        padding: 0.8rem 1rem;
+        border-radius: 50%;
+        color: rgb(255, 255, 255);
+    }
 }
 
 .bgdark {
@@ -608,7 +643,7 @@
 }
 
 .chcard1 {
-    width: 356px;
+    width: 330px;
     height: auto;
     background-color: #e5e5e5;
     border-radius: 10px;
@@ -625,14 +660,54 @@
     transform: scale(1.1);
 }
 
-.chcard1 img {
-    width: 100%;
+#chef1img img {
+    width: 290px;
     height: auto;
     border-radius: 24px;
     padding: 0.5rem;
 }
 
-.chcard1 img:hover {
+#chef1img {
+    width: 100%;
+    height: auto;
+}
+
+#chef1img:hover {
+    border-radius: 24px;
+    border: 1px solid #b9b8b8;
+}
+
+#chef2img img {
+    width: 290px;
+    height: auto;
+    border-radius: 24px;
+    padding: 0.5rem;
+}
+
+#chef2img {
+    width: 100%;
+    height: auto;
+}
+
+#chef2img:hover {
+    border-radius: 24px;
+    border: 1px solid #b9b8b8;
+}
+
+#chef3img img {
+    width: 290px;
+    height: auto;
+    border-radius: 24px;
+    padding: 0.5rem;
+}
+
+#chef3img {
+    width: 100%;
+    height: auto;
+}
+
+#chef3img:hover {
+    border-radius: 24px;
     border: 1px solid #b9b8b8;
 }
 
@@ -750,21 +825,23 @@ form textarea {
     display: flex;
 }
 
-.slide {
-    transition: 0.5s ease-in;
-    padding: 10px 0;
+.imge {
+    width: 192px;
+    height: 170px;
+    overflow: hidden;
+    border-radius: 10px;
     margin: 0 1rem;
 }
 
-.slide:hover {
-    transform: scale(1.1);
+.imge img:hover {
+    transform: scale(1.05);
 }
 
-.slide img {
+.imge img {
     width: 100%;
-    height: 250px;
+    height: 100%;
+    transition: 0.5s ease-out;
     object-fit: cover;
-    border-radius: 10px;
 }
 
 .conthd {
@@ -798,7 +875,7 @@ form textarea {
     display: flex;
     margin: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 0 16px #242424;
+    box-shadow: 0 0 10px #2424248b;
     padding: 0 2rem;
     align-items: center;
 }
@@ -824,7 +901,7 @@ form textarea {
     display: flex;
     margin: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 0 16px #242424;
+    box-shadow: 0 0 10px #2424248b;
     padding: 0 2rem;
     align-items: center;
 }
@@ -841,6 +918,11 @@ form textarea {
     color: white;
 }
 
+.fcallmailcont p a {
+    color: White;
+    text-decoration: none;
+}
+
 .callcont {
     margin: 1.5rem 1.5rem 0 2rem;
 }
@@ -851,7 +933,7 @@ form textarea {
     display: flex;
     margin: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 0 16px #242424;
+    box-shadow: 0 0 10px #2424248b;
     padding: 0 2rem;
     align-items: center;
 }
@@ -878,7 +960,7 @@ form textarea {
     display: flex;
     margin: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 0 16px #242424;
+    box-shadow: 0 0 10px #2424248b;
     padding: 0 2rem;
     align-items: center;
 }

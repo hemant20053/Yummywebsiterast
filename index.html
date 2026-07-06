@@ -15,7 +15,7 @@
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="yummyweb.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -70,6 +70,12 @@
                                 <a class="nav-link" href="/">Contact</a>
                             </li>
                         </ul>
+                        <div class="toggle-container">
+                            <label class="switch">
+                                <input type="checkbox" id="themeToggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
                     </div>
                     <div class="booktab">
                         <button>Book a Table</button>
@@ -88,14 +94,17 @@
                         <div class="booktb" data-aos="fade-up" data-aos-duration="1500">
                             <h1>Enjoy Your Healthy <br> Delicious Food</h1>
                             <p>We are team of talented designers making <br> websites with Bootstrap</p>
-                            <div class="bookbtn" data-aos="fade-up" data-aos-duration="3000">
+                            <div class="bookbtn">
                                 <button>Book a Table</button>
-                                <a href="/"><span><i class="fa-regular fa-circle-play"></i></span>Watch More</a>
+                                <div class="learnmr">
+                                    <span><i class="fa-regular fa-circle-play"></i></span>
+                                    <a href="/">Watch More</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="fdplate" data-aos="zoom-out" data-aos-duration="2000">
+                        <div class="fdplate" data-aos="fade-up" data-aos-duration="2000">
                             <img src="https://bootstrapmade.com/content/demo/Yummy/assets/img/hero-img.png"
                                 alt="food plate">
                         </div>
@@ -131,21 +140,23 @@
                                 aliqua.
                             </h5>
                             <p><span><i class="fa-solid fa-circle-check" style="color: red;"></i></span>Ullamco laboris
-                                nisi ut
-                                aliquip ex ea commodo consequat. <br> <br><span><i class="fa-solid fa-circle-check"
-                                        style="color: red;"></i></span>Duis aute irure dolor in reprehenderit in
-                                voluptate velit. <br><br><span><i class="fa-solid fa-circle-check"
-                                        style="color: red;"></i></span>Ullamco laboris nisi ut aliquip ex ea commodo
+                                nisi ut aliquip ex ea commodo consequat. <br><span><i class="fa-solid fa-circle-check"
+                                        style="color: red;"></i></span>Duis aute irure
+                                dolor in reprehenderit in voluptate velit. <br><span><i class="fa-solid fa-circle-check"
+                                        style="color: red;"></i></span>Ullamco laboris
+                                nisi ut aliquip ex ea commodo
                                 consequat. Duis aute irure dolor in reprehenderit in voluptate trideta
                                 storacalaperda mastiro dolore eu fugiat nulla pariatur.
                             </p>
                             <h6>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
                                 reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
-                            </h6>
-                            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8"><img
-                                    src="https://bootstrapmade.com/content/demo/Yummy/assets/img/about-2.jpg" alt="">
-                            </a>
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+                            </h6><br>
+                            <div class="aboutimg">
+                                <span class="playicon">
+                                    <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8"><i
+                                            class="fa-regular fa-circle-play"></i></a></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -176,7 +187,7 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="card1" data-aos="fade-up" data-aos-duration="2000">
-                            <h3><span>&#128923;</span></h3>
+                            <h3><span class="dmicon">&#128923;</span></h3>
                             <h4>Corporis voluptates officia eiusmod</h4>
                             <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut
                                 aliquip.Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut
@@ -185,7 +196,7 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="card1" data-aos="fade-up" data-aos-duration="2500">
-                            <h3><span>&#128923;</span></h3>
+                            <h3><span class="dmicon">&#128923;</span></h3>
                             <h4>Corporis voluptates officia eiusmod</h4>
                             <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut
                                 aliquip.Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut
@@ -194,7 +205,7 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="card1" data-aos="fade-up" data-aos-duration="3000">
-                            <h3><span>&#128923;</span></h3>
+                            <h3><span class="dmicon">&#128923;</span></h3>
                             <h4>Corporis voluptates officia eiusmod</h4>
                             <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut
                                 aliquip.Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut
@@ -400,7 +411,10 @@
                     <div class="col-lg-4">
                         <div class="chefcard1" data-aos="fade-up" data-aos-duration="1500">
                             <div class="chcard1">
-                                <img src="https://themewagon.github.io/yummy-red/assets/img/chefs/chefs-1.jpg" alt="">
+                                <div id="chef1img" onmouseout="originalphoto()" onmouseover="changephoto()">
+                                    <img src="https://themewagon.github.io/yummy-red/assets/img/chefs/chefs-1.jpg"
+                                        alt="">
+                                </div>
                                 <div class="chef1">
                                     <h3>Walter White</h3>
                                     <span>Master Chef</span>
@@ -421,7 +435,10 @@
                     <div class="col-lg-4">
                         <div class="chefcard1" data-aos="fade-up" data-aos-duration="2000">
                             <div class="chcard1">
-                                <img src="https://themewagon.github.io/yummy-red/assets/img/chefs/chefs-2.jpg" alt="">
+                                <div id="chef2img" onmouseout="originalphoto()" onmouseover="changephoto()">
+                                    <img src="https://themewagon.github.io/yummy-red/assets/img/chefs/chefs-2.jpg"
+                                        alt="">
+                                </div>
                                 <div class="chef2">
                                     <h3>Sarah Jhonson</h3>
                                     <span>Patissier</span>
@@ -442,7 +459,10 @@
                     <div class="col-lg-4">
                         <div class="chefcard1" data-aos="fade-up" data-aos-duration="2500">
                             <div class="chcard1">
-                                <img src="https://themewagon.github.io/yummy-red/assets/img/chefs/chefs-3.jpg" alt="">
+                                <div id="chef3img">
+                                    <img src="https://themewagon.github.io/yummy-red/assets/img/chefs/chefs-3.jpg"
+                                        alt="">
+                                </div>
                                 <div class="chef3">
                                     <h3>William Anderson</h3>
                                     <span>Cook</span>
@@ -548,20 +568,25 @@
             <div class="carousel-container">
 
                 <div class="carousel-track">
-                    <div class="slide" data-aos="fade-up" data-aos-duration="1000">
-                        <img src="https://themewagon.github.io/yummy-red/assets/img/gallery/gallery-1.jpg" alt="">
+                    <div class="imge">
+                        <img id="img1" src="https://themewagon.github.io/yummy-red/assets/img/gallery/gallery-1.jpg"
+                            onmouseover="changephoto('img1')" onmouseout="originalphoto('img1')">
                     </div>
-                    <div class="slide" data-aos="fade-up" data-aos-duration="1500">
-                        <img src="https://themewagon.github.io/yummy-red/assets/img/gallery/gallery-2.jpg" alt="">
+                    <div class="imge">
+                        <img id="img2" src="https://themewagon.github.io/yummy-red/assets/img/gallery/gallery-2.jpg"
+                            onmouseover="changephoto('img2')" onmouseout="originalphoto('img2')">
                     </div>
-                    <div class="slide" data-aos="fade-up" data-aos-duration="2000">
-                        <img src="https://themewagon.github.io/yummy-red/assets/img/gallery/gallery-3.jpg" alt="">
+                    <div class="imge">
+                        <img id="img3" src="https://themewagon.github.io/yummy-red/assets/img/gallery/gallery-3.jpg"
+                            onmouseover="changephoto('img3')" onmouseout="originalphoto('img3')">
                     </div>
-                    <div class="slide" data-aos="fade-up" data-aos-duration="2500">
-                        <img src="https://themewagon.github.io/yummy-red/assets/img/gallery/gallery-4.jpg" alt="">
+                    <div class="imge">
+                        <img id="img4" src="https://themewagon.github.io/yummy-red/assets/img/gallery/gallery-4.jpg"
+                            onmouseover="changephoto('img4')" onmouseout="originalphoto('img4')">
                     </div>
-                    <div class="slide" data-aos="fade-up" data-aos-duration="3000">
-                        <img src="https://themewagon.github.io/yummy-red/assets/img/gallery/gallery-5.jpg" alt="">
+                    <div class="imge">
+                        <img id="img5" src="https://themewagon.github.io/yummy-red/assets/img/gallery/gallery-5.jpg"
+                            onmouseover="changephoto('img5')" onmouseout="originalphoto('img5')">
                     </div>
                 </div>
 
@@ -687,7 +712,9 @@
                             <span><i class="fa-solid fa-phone"></i></span>
                             <div class="fcallmailcont">
                                 <h6><strong>Contact</strong></h6>
-                                <P><strong>Phone:</strong> +1 5589 55488 55 <br><strong>Email:</strong> info@example.com
+                                <P><strong>Phone:</strong><a href="tel:+1 5589 55488 55"> +1 5589 55488
+                                        55</a><br><strong>Email:</strong><a href="mailto:info@example.com">
+                                        info@example.com</a>
                                 </P>
                             </div>
                         </div>
@@ -709,12 +736,15 @@
                             <div class="sociallinks">
                                 <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                                 <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="https://www.instagram.com/" target="_blank"><i
+                                        class="fa-brands fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com/feed/" target="_blank"><i
+                                        class="fa-brands fa-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
+                <hr>
                 <div class="footercopyr">
                     <p>© Copyright <strong>Yummy</strong> All Rights Reserved</p>
                     <p>Designed by <a href="#">BootstrapMade</a> Distributed by <a href="#">ThemeWagon</a></p>
@@ -723,7 +753,60 @@
         </div>
     </div>
 
+    <script>
+        const toggle = document.getElementById("themeToggle");
 
+        // Load saved theme
+        if (localStorage.getItem("theme") === "dark") {
+            document.body.classList.add("dark-mode");
+            toggle.checked = true;
+        }
+
+        // Toggle theme
+        toggle.addEventListener("change", function () {
+            if (this.checked) {
+                document.body.classList.add("dark-mode");
+                localStorage.setItem("theme", "dark");
+            } else {
+                document.body.classList.remove("dark-mode");
+                localStorage.setItem("theme", "light");
+            }
+        });
+    </script>
+
+
+    <script>
+        const images = {
+            img1: {
+                original: "https://themewagon.github.io/yummy-red/assets/img/gallery/gallery-1.jpg",
+                hover: "https://images.unsplash.com/photo-1592861956120-e524fc739696?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlc3RhdXJhbnR8ZW58MHx8MHx8fDA%3D"
+            },
+            img2: {
+                original: "https://themewagon.github.io/yummy-red/assets/img/gallery/gallery-2.jpg",
+                hover: "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHJlc3RhdXJhbnR8ZW58MHx8MHx8fDA%3D"
+            },
+            img3: {
+                original: "https://themewagon.github.io/yummy-red/assets/img/gallery/gallery-3.jpg",
+                hover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Dzij1NEobTDQz2gKiWp4FAikbpmone5iXg&s"
+            },
+            img4: {
+                original: "https://themewagon.github.io/yummy-red/assets/img/gallery/gallery-4.jpg",
+                hover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe3bgccezXYTdEkSVg1v_KNJywZmP_csebWQ&s"
+            },
+            img5: {
+                original: "https://themewagon.github.io/yummy-red/assets/img/gallery/gallery-5.jpg",
+                hover: "https://cdn.pixabay.com/photo/2016/02/10/13/35/hotel-1191718_1280.jpg"
+            }
+        };
+
+        function changephoto(id) {
+            document.getElementById(id).src = images[id].hover;
+        }
+
+        function originalphoto(id) {
+            document.getElementById(id).src = images[id].original;
+        }
+    </script>
 
 
     <script>
@@ -762,49 +845,55 @@
         // Feedback form
 
         function Submitdata() {
+            // Clear previous error messages
+            const errorSpans = document.querySelectorAll('.error');
+            errorSpans.forEach(span => span.textContent = '');
 
-            let fullname = document.getElementById("fulName").value.trim();
-            let email = document.getElementById("emaildat").value.trim();
-            let subject = document.getElementById("subject").value.trim();
-            let message = document.getElementById("message").value.trim();
+            // Get form field values
+            const fullName = document.getElementById('fulName').value.trim();
+            const email = document.getElementById('emaildat').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
 
-            // Error Clear
-            document.getElementById("nameError").innerHTML = "";
-            document.getElementById("emailError").innerHTML = "";
-            document.getElementById("subjectError").innerHTML = "";
-            document.getElementById("messageError").innerHTML = "";
-
-            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
+            // Track validation status
             let isValid = true;
 
-            // Name Validation
-            if (fullname == "") {
-                document.getElementById("nameError").innerHTML = "Please enter your name";
+            // 1. Full Name Validation
+            if (fullName === "") {
+                document.getElementById('nameError').textContent = "Full name is required.";
+                isValid = false;
+            } else if (fullName.length < 3) {
+                document.getElementById('nameError').textContent = "Name must be at least 3 characters long.";
                 isValid = false;
             }
 
-            // Email Validation
-            if (email == "") {
-                document.getElementById("emailError").innerHTML = "Please enter your email";
+            // 2. Email Validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email === "") {
+                document.getElementById('emailError').textContent = "Email address is required.";
                 isValid = false;
-            } else if (!emailPattern.test(email)) {
-                document.getElementById("emailError").innerHTML = "Invalid email address";
-                isValid = false;
-            }
-
-            // Subject Validation
-            if (subject == "") {
-                document.getElementById("subjectError").innerHTML = "Please enter subject";
+            } else if (!emailRegex.test(email)) {
+                document.getElementById('emailError').textContent = "Please enter a valid email address.";
                 isValid = false;
             }
 
-            // Message Validation
-            if (message == "") {
-                document.getElementById("messageError").innerHTML = "Please enter message";
+            // 3. Subject Validation
+            if (subject === "") {
+                document.getElementById('subjectError').textContent = "Subject is required.";
                 isValid = false;
             }
 
+            // 4. Message Validation
+            if (message === "") {
+                document.getElementById('messageError').textContent = "Message cannot be empty.";
+                isValid = false;
+            } else if (message.length < 10) {
+                document.getElementById('messageError').textContent = "Message must be at least 10 characters long.";
+                isValid = false;
+            }
+
+            // If isValid remains true, the form will submit to "yummywebfb.php"
+            // If false, it returns false and stops the submission
             return isValid;
         }
 

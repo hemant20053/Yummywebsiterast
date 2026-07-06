@@ -18,7 +18,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "INSERT INTO yummyweb (flname, emaildata, subject, message)
+$sql = "INSERT INTO yummyweb (flname, emaildata, `subject`, `message`)
 VALUES ('$fname', '$emaildata', '$subject','$message')";
 
 if (mysqli_query($conn, $sql)) {
