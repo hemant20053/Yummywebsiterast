@@ -17,6 +17,27 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <style>
+        /* Default Colors (Light Mode) */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+        }
+
+        /* Night Mode Colors */
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+        }
+
+        /* Apply variables to the body */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -70,12 +91,7 @@
                                 <a class="nav-link" href="/">Contact</a>
                             </li>
                         </ul>
-                        <div class="toggle-container">
-                            <label class="switch">
-                                <input type="checkbox" id="themeToggle">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
+                        <button id="theme-toggle">🌙 Night Mode</button>
                     </div>
                     <div class="booktab">
                         <button>Book a Table</button>
@@ -754,24 +770,33 @@
     </div>
 
     <script>
-        const toggle = document.getElementById("themeToggle");
+        const toggleButton = document.getElementById('theme-toggle');
 
-        // Load saved theme
-        if (localStorage.getItem("theme") === "dark") {
-            document.body.classList.add("dark-mode");
-            toggle.checked = true;
+        // Check for saved preference, otherwise use system preference
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            toggleButton.textContent = '☀️ Day Mode';
         }
 
-        // Toggle theme
-        toggle.addEventListener("change", function () {
-            if (this.checked) {
-                document.body.classList.add("dark-mode");
-                localStorage.setItem("theme", "dark");
+        // Toggle theme on click
+        toggleButton.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            let newTheme = 'light';
+
+            if (currentTheme !== 'dark') {
+                newTheme = 'dark';
+                toggleButton.textContent = '☀️ Day Mode';
             } else {
-                document.body.classList.remove("dark-mode");
-                localStorage.setItem("theme", "light");
+                toggleButton.textContent = '🌙 Night Mode';
             }
+
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
         });
+
     </script>
 
 
