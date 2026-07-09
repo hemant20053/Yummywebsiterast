@@ -26,8 +26,8 @@
 
         /* Night Mode Colors */
         [data-theme="dark"] {
-            --bg-color: #121212;
-            --text-color: #e0e0e0;
+            --bg-color: #1f1f1f !important;
+            --text-color: #d5d5d5 !important;
         }
 
         /* Apply variables to the body */
@@ -36,14 +36,38 @@
             color: var(--text-color);
             transition: background-color 0.3s, color 0.3s;
         }
+
+        #theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            box-shadow: 0 0 10px #ff0;
+            background: #212529;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 18px;
+            font-size: 15px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: 0.3s;
+        }
+
+        #theme-toggle:hover {
+            background: #dc3545;
+            transform: scale(1.05);
+        }
     </style>
 
 </head>
 
 <body>
-    <div class="header">
+    <div class="header navbar-light bg-light">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button id="theme-toggle">🌙 Night Mode</button>
+
+            <nav class="navbar navbar-expand-lg">
                 <div class="container">
                     <a class="navbar-brand" href="https://themewagon.github.io/yummy-red/">Yummy <span>.</span></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -76,7 +100,7 @@
                                 <a class="nav-link dropdown-toggle" href="https://themewagon.github.io/yummy-red/"
                                     id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    Dropdown link
+                                    Dropdown
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <li><a class="dropdown-item"
@@ -90,11 +114,14 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="/">Contact</a>
                             </li>
+
                         </ul>
-                        <button id="theme-toggle">🌙 Night Mode</button>
-                    </div>
-                    <div class="booktab">
-                        <button>Book a Table</button>
+                        <div class="input-group w-20">
+                            <input type="text" id="searchInput" class="form-control" placeholder="Search Menu">
+                            <button class="btn btn-danger px-3 my-3" style="height:38px;" onclick="searchMenu()">
+                                🔍
+                            </button>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -275,20 +302,23 @@
                 <p>Our Menu</p>
                 <h2>Check Our <span>Yummy Menu</span></h2>
             </div>
-            <div class="menutab" data-aos="fade-up" data-aos-duration="1500">
-                <a href="">Starters</a>
-                <a href="">Breakfast</a>
-                <a href="">Lunch</a>
-                <a href="">Dinner</a>
-            </div>
+
             <div class="fmenu">
                 <div class="menus" data-aos="fade-up" data-aos-duration="1500">
                     <p>MENU</p>
                     <h1>Starters</h1>
                 </div>
+                <div class="menutab" data-aos="fade-up" data-aos-duration="1500">
+                    <div class="tab">
+                        <button class="tablinks" onclick="openMenu(event, 'All')">All</button>
+                        <button class="tablinks" onclick="openMenu(event, 'Magnam Tiste')">Magnam Tiste</button>
+                        <button class="tablinks" onclick="openMenu(event, 'Chicken Burger')">Chicken Burger</button>
+                        <button class="tablinks" onclick="openMenu(event, 'Pizza')">Pizza</button>
+                    </div>
+                </div>
                 <div class="row">
-                    <div class="col-lg-4" data-aos="fade-up" data-aos-duration="1500">
-                        <div class="menu1">
+                    <div class="col-lg-4 menu-item">
+                        <div class="menu1" data-aos="fade-up" data-aos-duration="1500" id="Magnam" class="tabcontent">
                             <a href="https://themewagon.github.io/yummy-red/"><img
                                     src="https://themewagon.github.io/yummy-red/assets/img/menu/menu-item-1.png" alt="">
                             </a>
@@ -297,30 +327,65 @@
                             <h5>$5.95</h5>
                         </div>
                     </div>
-                    <div class="col-lg-4" data-aos="fade-up" data-aos-duration="1500">
-                        <div class="menu2">
+
+                    <div class="col-lg-4 menu-item">
+                        <div class="menu2" data-aos="fade-up" data-aos-duration="1500" id="Burger" class="tabcontent">
                             <a href="https://themewagon.github.io/yummy-red/"><img
                                     src="https://themewagon.github.io/yummy-red/assets/img/menu/menu-item-2.png" alt="">
+                            </a>
+                            <h4>Chicken Burger</h4>
+                            <p>Cheese, Onion, Tomato</p>
+                            <h5>$8.50</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 menu-item">
+                        <div class="menu3" data-aos="fade-up" data-aos-duration="1500" id="Pizza" class="tabcontent">
+                            <a href="https://themewagon.github.io/yummy-red/"><img
+                                    src="https://themewagon.github.io/yummy-red/assets/img/menu/menu-item-3.png" alt="">
+                            </a>
+                            <h4>Pizza</h4>
+                            <p>Italian Special</p>
+                            <h5>$12.00</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 menu-item">
+                        <div class="menu1" data-aos="fade-up" data-aos-duration="1500">
+                            <a href="https://themewagon.github.io/yummy-red/"><img
+                                    src="https://themewagon.github.io/yummy-red/assets/img/menu/menu-item-1.png" alt="">
                             </a>
                             <h4>Magnam Tiste</h4>
                             <p>Lorem, deren, trataro, filede, nerada</p>
                             <h5>$5.95</h5>
                         </div>
                     </div>
-                    <div class="col-lg-4" data-aos="fade-up" data-aos-duration="1500">
-                        <div class="menu3">
+
+                    <div class="col-lg-4 menu-item">
+                        <div class="menu2" data-aos="fade-up" data-aos-duration="1500">
+                            <a href="https://themewagon.github.io/yummy-red/"><img
+                                    src="https://themewagon.github.io/yummy-red/assets/img/menu/menu-item-2.png" alt="">
+                            </a>
+                            <h4>Chicken Burger</h4>
+                            <p>Cheese, Onion, Tomato</p>
+                            <h5>$8.50</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 menu-item">
+                        <div class="menu3" data-aos="fade-up" data-aos-duration="1500">
                             <a href="https://themewagon.github.io/yummy-red/"><img
                                     src="https://themewagon.github.io/yummy-red/assets/img/menu/menu-item-3.png" alt="">
                             </a>
-                            <h4>Magnam Tiste</h4>
-                            <p>Lorem, deren, trataro, filede, nerada</p>
-                            <h5>$5.95</h5>
+                            <h4>Pizza</h4>
+                            <p>Italian Special</p>
+                            <h5>$12.00</h5>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4" data-aos="fade-up" data-aos-duration="1500">
-                        <div class="menu1">
+                    <div class="col-lg-4 menu-item">
+                        <div class="menu1" data-aos="fade-up" data-aos-duration="1500">
                             <a href="https://themewagon.github.io/yummy-red/"><img
                                     src="https://themewagon.github.io/yummy-red/assets/img/menu/menu-item-1.png" alt="">
                             </a>
@@ -329,24 +394,60 @@
                             <h5>$5.95</h5>
                         </div>
                     </div>
-                    <div class="col-lg-4" data-aos="fade-up" data-aos-duration="1500">
-                        <div class="menu2">
+
+                    <div class="col-lg-4 menu-item">
+                        <div class="menu2" data-aos="fade-up" data-aos-duration="1500">
                             <a href="https://themewagon.github.io/yummy-red/"><img
                                     src="https://themewagon.github.io/yummy-red/assets/img/menu/menu-item-2.png" alt="">
+                            </a>
+                            <h4>Chicken Burger</h4>
+                            <p>Cheese, Onion, Tomato</p>
+                            <h5>$8.50</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 menu-item">
+                        <div class="menu3" data-aos="fade-up" data-aos-duration="1500">
+                            <a href="https://themewagon.github.io/yummy-red/"><img
+                                    src="https://themewagon.github.io/yummy-red/assets/img/menu/menu-item-3.png" alt="">
+                            </a>
+                            <h4>Pizza</h4>
+                            <p>Italian Special</p>
+                            <h5>$12.00</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 menu-item">
+                        <div class="menu1" data-aos="fade-up" data-aos-duration="1500">
+                            <a href="https://themewagon.github.io/yummy-red/"><img
+                                    src="https://themewagon.github.io/yummy-red/assets/img/menu/menu-item-1.png" alt="">
                             </a>
                             <h4>Magnam Tiste</h4>
                             <p>Lorem, deren, trataro, filede, nerada</p>
                             <h5>$5.95</h5>
                         </div>
                     </div>
-                    <div class="col-lg-4" data-aos="fade-up" data-aos-duration="1500">
-                        <div class="menu3">
+
+                    <div class="col-lg-4 menu-item">
+                        <div class="menu2" data-aos="fade-up" data-aos-duration="1500">
+                            <a href="https://themewagon.github.io/yummy-red/"><img
+                                    src="https://themewagon.github.io/yummy-red/assets/img/menu/menu-item-2.png" alt="">
+                            </a>
+                            <h4>Chicken Burger</h4>
+                            <p>Cheese, Onion, Tomato</p>
+                            <h5>$8.50</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 menu-item">
+                        <div class="menu3" data-aos="fade-up" data-aos-duration="1500">
                             <a href="https://themewagon.github.io/yummy-red/"><img
                                     src="https://themewagon.github.io/yummy-red/assets/img/menu/menu-item-3.png" alt="">
                             </a>
-                            <h4>Magnam Tiste</h4>
-                            <p>Lorem, deren, trataro, filede, nerada</p>
-                            <h5>$5.95</h5>
+                            <h4>Pizza</h4>
+                            <p>Italian Special</p>
+                            <h5>$12.00</h5>
                         </div>
                     </div>
                 </div>
@@ -434,7 +535,8 @@
                                 <div class="chef1">
                                     <h3>Walter White</h3>
                                     <span>Master Chef</span>
-                                    <p>Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae
+                                    <p>Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa
+                                        quae
                                         aut.
                                         Ipsum exercitationem iure minima
                                         enim corporis et voluptate.</p>
@@ -458,7 +560,8 @@
                                 <div class="chef2">
                                     <h3>Sarah Jhonson</h3>
                                     <span>Patissier</span>
-                                    <p>Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae
+                                    <p>Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa
+                                        quae
                                         aut.
                                         Ipsum exercitationem iure minima
                                         enim corporis et voluptate.</p>
@@ -482,7 +585,8 @@
                                 <div class="chef3">
                                     <h3>William Anderson</h3>
                                     <span>Cook</span>
-                                    <p>Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae
+                                    <p>Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa
+                                        quae
                                         aut.
                                         Ipsum exercitationem iure minima
                                         enim corporis et voluptate.</p>
@@ -667,7 +771,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -769,6 +872,53 @@
         </div>
     </div>
 
+
+
+    <script>
+        function openMenu(evt, All) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+
+    <script>
+        function searchMenu() {
+
+            let input = document.getElementById("searchInput").value.toLowerCase();
+
+            let items = document.querySelectorAll(".menu-item");
+
+            items.forEach(function (item) {
+
+                let title = item.querySelector("h4").innerText.toLowerCase();
+
+                if (title.includes(input)) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+
+            });
+
+        }
+        document.getElementById("searchInput").addEventListener("keyup", function (e) {
+
+            if (e.key === "Enter") {
+                searchMenu();
+            }
+
+        });
+    </script>
+
     <script>
         const toggleButton = document.getElementById('theme-toggle');
 
@@ -799,6 +949,21 @@
 
     </script>
 
+    <script>
+        // Disable Right Click
+        document.addEventListener('contextmenu', function (event) {
+            event.preventDefault();
+        });
+
+        // Disable F12, Ctrl+Shift+I, and Ctrl+U
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'F12' ||
+                (event.ctrlKey && event.shiftKey && event.key === 'I') ||
+                (event.ctrlKey && event.key === 'U')) {
+                event.preventDefault();
+            }
+        });
+    </script>
 
     <script>
         const images = {
