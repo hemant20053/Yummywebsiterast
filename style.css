@@ -237,12 +237,11 @@
 }
 
 .chyummcard {
-    /* background-color: #e7e7e7; */
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 
 .choscard {
-    margin: 2.5rem 0;
+    margin: 1rem 0;
     color: #fff;
     background-color: #ce1212;
     padding: 1.5rem;
@@ -268,12 +267,9 @@
 }
 
 .card1 {
-    height: 74vh;
-    display: grid;
-    justify-content: center;
     align-items: center;
     color: #000;
-    margin: 2.5rem 0;
+    margin: 1rem 0;
     box-shadow: 0 0 10px #000;
     background-color: #fff;
     text-align: center;
@@ -374,15 +370,14 @@
     border-bottom: 2px solid #ec4354;
 }
 
-.menutab a::after {
+/* .menutab a::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: -5px;
     width: 100%;
     height: 2px;
-    background-color: #ff5722;
-}
+} */
 
 .menus {
     margin: 2rem 0;
@@ -495,6 +490,9 @@
 }
 
 .testimcomment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 3rem 4.5rem;
 }
 
@@ -517,7 +515,7 @@
 }
 
 .slideimg {
-    width: 200px;
+    width: 150px;
     height: auto;
 }
 
@@ -1077,6 +1075,47 @@ form textarea {
     color: red;
     font-size: 14px;
     margin-top: 5px;
+}
+
+/* Default Colors (Light Mode) */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+}
+
+/* Night Mode Colors */
+[data-theme="dark"] {
+    --bg-color: #1f1f1f !important;
+    --text-color: #d5d5d5 !important;
+}
+
+/* Apply variables to the body */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    box-shadow: 0 0 10px #ff0;
+    background: #212529;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 18px;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+#theme-toggle:hover {
+    background: #dc3545;
+    transform: scale(1.05);
 }
 
 .footerdata {
