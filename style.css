@@ -269,11 +269,15 @@
 .card1 {
     align-items: center;
     color: #000;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
     box-shadow: 0 0 10px #000;
     background-color: #fff;
     text-align: center;
     padding: 2.6rem 1.5rem;
+}
+
+.card1 h4 {
+    margin: 1.5rem 0;
 }
 
 .card1 h3 span {
@@ -297,8 +301,13 @@
 }
 
 .bgdark {
+    display: grid;
+    justify-content: center;
+}
+
+.txtbgdark {
     width: 100%;
-    min-height: 74vh;
+    max-height: 100vh;
     text-align: center;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -332,7 +341,7 @@
     margin: 4rem 0;
 }
 
-.txtbgimg .container {
+.txtbgimg .row {
     background-color: #0000002c;
 }
 
@@ -361,7 +370,7 @@
     padding: 0.8rem 0;
     text-decoration: none;
     color: rgb(229, 17, 17);
-    border-bottom: 2px solid #9f5159;
+    border-bottom: 2px solid #de3c4c;
     position: relative;
     width: 0;
 }
@@ -369,15 +378,6 @@
 .menutab a:hover {
     border-bottom: 2px solid #ec4354;
 }
-
-/* .menutab a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 100%;
-    height: 2px;
-} */
 
 .menus {
     margin: 2rem 0;
@@ -493,7 +493,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 3rem 4.5rem;
+    margin: 3rem 4rem;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    border: none;
+    border-radius: 0;
+    border-left: 2px solid #000;
+    padding-left: 2rem;
+}
+
+.swiper-slide {
+    font-size: 18px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
 }
 
 .testimcomment p {
@@ -532,13 +551,10 @@
 .event1 {
     width: 410px;
     height: 404px;
+    position: relative;
     background-repeat: no-repeat;
     background-size: 412px auto;
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgqQScaiYx6f6voVtMOyLySkBi0Urbs_gNkw&s");
-}
-
-.event1 {
-    position: relative;
 }
 
 .bthevent {
@@ -567,13 +583,10 @@
 .event2 {
     width: 410px;
     height: 404px;
+    position: relative;
     background-repeat: no-repeat;
     background-size: 412px auto;
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8rqHqXpjTVzdwsLy1r7fiRnySGQmnQMrboQ&s");
-}
-
-.event2 {
-    position: relative;
 }
 
 .weddevent {
@@ -601,13 +614,10 @@
 .event3 {
     width: 410px;
     height: 404px;
+    position: relative;
     background-repeat: no-repeat;
     background-size: 412px auto;
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaIxVMJbjNSo6R6j7wInjFXLFeG8_5A5LRLA&s");
-}
-
-.event3 {
-    position: relative;
 }
 
 .custevent {
@@ -1075,6 +1085,13 @@ form textarea {
     color: red;
     font-size: 14px;
     margin-top: 5px;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
 }
 
 /* Default Colors (Light Mode) */

@@ -1,7 +1,7 @@
 <?php
 
 $funame = $_POST['fulname'];
-$emaildata = $_POST['emaild'];
+$emaildata = $_POST['emaildt'];
 $phonenum = $_POST['phonenum'];
 $date = $_POST['date'];
 $time = $_POST['time'];
@@ -21,11 +21,12 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "INSERT INTO yummywebbtb (fulname, emaild, phonenum, date, time, pnumber, message)
+$sql = "INSERT INTO yummywebbtb (fulname, emaildt, phonenum, `date`, `time`, pnumber, `message`)
 VALUES ('$funame', '$emaildata', '$phonenum','$date','$time', '$peonum', '$message')";
 
 if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully";
+    header("Location: index.html");
+    exit;
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
