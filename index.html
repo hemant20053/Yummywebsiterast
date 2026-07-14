@@ -15,9 +15,9 @@
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <link href="https://jsdelivr.net" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
-    <link rel="stylesheet" href="https://cloudflare.com">
+    <link href="https://jsdelivr.net" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 
@@ -66,6 +66,7 @@
                                 placeholder="Search Menu"><button class="btn btn-danger px-3 my-3" style="height:38px;"
                                 onclick="searchMenu()">🔍 </button>
                         </div>
+                        <a href="admin.html" class="login-btn">Admin</a>
                     </div>
                 </div>
             </nav>
@@ -336,27 +337,90 @@
             </div>
             <div class="textmpeople">
                 <div class="testimcomment" data-aos="fade-up" data-aos-duration="1500">
-                    <div class="swiper-container">
+                    <div class="swiper mySwiper">
+
                         <div class="swiper-wrapper">
+
                             <div class="swiper-slide">
-                                <div class="card">
-                                    <p>"All dishes are an absolute game-changer! Cooked to perfection with flavors that
-                                        completely blew us away.All dishes are fabulus."
-                                    </p>
-                                    <div class="card-body">
-                                        <h5>SARA WILSSON</h5>
-                                        <h6>DESIGNER</h6>
-                                        <h4>⭐⭐⭐⭐⭐</h4>
+                                <div class="testimonial-box">
+
+                                    <div class="card">
+                                        <p>
+                                            "All dishes are an absolute game-changer! Cooked to perfection with flavors
+                                            that completely blew
+                                            us away. All dishes are fabulous."
+                                        </p>
+
+                                        <div class="card-body">
+                                            <h5>SARA WILSSON</h5>
+                                            <h6>DESIGNER</h6>
+                                            <h4>⭐⭐⭐⭐⭐</h4>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="slideimg" data-aos="fade-up" data-aos-duration="1500">
-                                    <img src="https://themewagon.github.io/yummy-red/assets/img/testimonials/testimonials-2.jpg"
-                                        alt="sara wilsson">
+
+                                    <div class="slideimg">
+                                        <img src="https://themewagon.github.io/yummy-red/assets/img/testimonials/testimonials-2.jpg"
+                                            alt="Sara">
+                                    </div>
+
                                 </div>
                             </div>
+
+                            <!-- Slide 2 -->
+                            <div class="swiper-slide">
+                                <div class="testimonial-box">
+
+                                    <div class="card">
+                                        <p>
+                                            "Excellent service and amazing food. Highly recommended! All dishes are an
+                                            absolute game-changer! Cooked to perfection with flavors
+                                            that completely blew
+                                            us away."
+                                        </p>
+
+                                        <div class="card-body">
+                                            <h5>JENA KARLIS</h5>
+                                            <h6>STORE OWNER</h6>
+                                            <h4>⭐⭐⭐⭐⭐</h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="slideimg">
+                                        <img src="https://themewagon.github.io/yummy-red/assets/img/testimonials/testimonials-3.jpg"
+                                            alt="">
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Slide 3 -->
+                            <div class="swiper-slide">
+                                <div class="testimonial-box">
+
+                                    <div class="card">
+                                        <p>
+                                            "Best restaurant experience we've had in years. All dishes are an absolute
+                                            game-changer! Cooked to perfection with flavors
+                                            that completely blew
+                                            us away."
+                                        </p>
+
+                                        <div class="card-body">
+                                            <h5>JOHN DOE</h5>
+                                            <h6>CHEF</h6>
+                                            <h4>⭐⭐⭐⭐⭐</h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="slideimg">
+                                        <img src="https://themewagon.github.io/yummy-red/assets/img/testimonials/testimonials-4.jpg"
+                                            alt="">
+                                    </div>
+
+                                </div>
+                            </div>
+
                         </div>
-                        <!-- Add Pagination -->
-                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
 
@@ -765,9 +829,8 @@
     <script src="./index.js"></script>
 
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script src="script.js"></script>
 

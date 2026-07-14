@@ -25,7 +25,7 @@ $sql = "INSERT INTO yummywebbtb (fulname, emaildt, phonenum, `date`, `time`, pnu
 VALUES ('$funame', '$emaildata', '$phonenum','$date','$time', '$peonum', '$message')";
 
 if (mysqli_query($conn, $sql)) {
-    header("Location: index.html");
+    header("Location: indexwelcome.html");
     exit;
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
