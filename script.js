@@ -223,41 +223,46 @@ function searchMenu() {
     });
 
 }
-document.getElementById("searchInput").addEventListener("keyup", function (e) {
 
-    if (e.key === "Enter") {
-        searchMenu();
-    }
+const searchInput = document.getElementById("searchInput");
 
-});
-
-
-const toggleButton = document.getElementById('theme-toggle');
-
-// Check for saved preference, otherwise use system preference
-const savedTheme = localStorage.getItem('theme');
-const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    toggleButton.textContent = '☀️ Day Mode';
+if (searchInput) {
+    searchInput.addEventListener("keyup", function (e) {
+        if (e.key === "Enter") {
+            searchMenu();
+        }
+    });
 }
 
-// Toggle theme on click
-toggleButton.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    let newTheme = 'light';
 
-    if (currentTheme !== 'dark') {
-        newTheme = 'dark';
+const toggleButton = document.getElementById("theme-toggle");
+
+if (toggleButton) {
+
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
         toggleButton.textContent = '☀️ Day Mode';
-    } else {
-        toggleButton.textContent = '🌙 Night Mode';
     }
 
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-});
+    toggleButton.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        let newTheme = 'light';
+
+        if (currentTheme !== 'dark') {
+            newTheme = 'dark';
+            toggleButton.textContent = '☀️ Day Mode';
+        } else {
+            toggleButton.textContent = '🌙 Night Mode';
+        }
+
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+
+}
 
 
 

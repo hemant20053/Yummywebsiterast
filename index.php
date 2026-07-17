@@ -2,7 +2,7 @@
 
 $funame = $_POST['fulname'];
 $emaildata = $_POST['emaildt'];
-$phonenum = $_POST['phonenum'];
+$phone = $_POST['phonenum'];
 $date = $_POST['date'];
 $time = $_POST['time'];
 $peonum = $_POST['pnumber'];
@@ -22,7 +22,7 @@ if (!$conn) {
 }
 
 $sql = "INSERT INTO yummywebbtb (fulname, emaildt, phonenum, `date`, `time`, pnumber, `message`)
-VALUES ('$funame', '$emaildata', '$phonenum','$date','$time', '$peonum', '$message')";
+VALUES ('$funame', '$emaildata', '$phone','$date','$time', '$peonum', '$message')";
 
 if (mysqli_query($conn, $sql)) {
     header("Location: indexwelcome.html");
@@ -32,4 +32,5 @@ if (mysqli_query($conn, $sql)) {
 }
 
 mysqli_close($conn);
+
 ?>

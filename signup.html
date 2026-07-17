@@ -31,7 +31,7 @@
 
         <h2 class="text-center mb-4">Admin Signup</h2>
 
-        <form action="adminsignup.php" method="POST">
+        <form action="adminsignup.php" method="POST" enctype="multipart/form-data">
 
             <div class="mb-3">
                 <label>First Name</label>
@@ -53,8 +53,17 @@
                 <input type="password" class="form-control" name="pass" required>
             </div>
 
+            <div class="mb-3">
+                <label>Profile Image</label>
+                <input type="file" class="form-control" name="image" required>
+            </div>
+
             <button class="btn btn-primary w-100">
                 Sign Up
+            </button>
+
+            <button class="btn btn-primary mt-3" onclick="location.href='admin.html'">
+                Admin Login
             </button>
 
         </form>

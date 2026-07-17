@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Forgot Password</title>
+</head>
+
+<body>
+
+    <h2>Forgot Password</h2>
+
+    <form action="send_otp.php" method="POST">
+
+        <input type="email" name="email" placeholder="Enter Email" required>
+
+        <br><br>
+
+        <button type="submit">
+            Send OTP
+        </button>
+
+    </form>
+
+</body>
+
+</html>

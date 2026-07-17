@@ -1,18 +1,24 @@
 <?php
 session_start();
 
-// अगर login session हो तो यहाँ check करें
-// if(!isset($_SESSION['admin']))
-// {
-//     header("Location: adminlog.php");
-//     exit();
-// }
-
 $conn = new mysqli("localhost", "root", "", "yummywebsite");
 
 if ($conn->connect_error) {
     die("Connection Failed : " . $conn->connect_error);
 }
+
+if (!isset($_SESSION['admin_id'])) {
+    header("Location: admin.html");
+    exit();
+}
+
+$admin_id = $_SESSION['admin_id'];
+
+$stmt = $conn->prepare("SELECT fname, image FROM admin_signup WHERE id = ?");
+$stmt->bind_param("i", $admin_id);
+$stmt->execute();
+
+$admin = $stmt->get_result()->fetch_assoc();
 
 // Total Bookings
 $total = $conn->query("SELECT COUNT(*) as total FROM yummywebbtb")->fetch_assoc()['total'];
@@ -62,6 +68,10 @@ $result = $conn->query("SELECT * FROM yummywebbtb ORDER BY id DESC");
             padding: 20px;
         }
 
+        .content img {
+            float: right;
+        }
+
         .card {
             border: none;
             box-shadow: 0 0 10px rgba(0, 0, 0, .1);
@@ -69,6 +79,10 @@ $result = $conn->query("SELECT * FROM yummywebbtb ORDER BY id DESC");
 
         table {
             background: white;
+        }
+
+        tbody td a {
+            margin: 0.5rem;
         }
     </style>
 
@@ -86,16 +100,13 @@ $result = $conn->query("SELECT * FROM yummywebbtb ORDER BY id DESC");
 
         <a href="#"><i class="fa fa-home"></i> Dashboard</a>
 
-        <a href="#"><i class="fa fa-calendar"></i> Bookings</a>
-
-        <a href="#"><i class="fa fa-user"></i> Customers</a>
-
         <a href="logout.php"><i class="fa fa-sign-out-alt"></i> Logout</a>
 
     </div>
 
     <div class="content">
-
+        <img src="uploads/<?php echo htmlspecialchars($admin['image']); ?>" alt="Admin" width="80" height="80"
+            style="border-radius:50%;">
         <h2>
             Restaurant Admin Dashboard
         </h2>
@@ -152,6 +163,8 @@ $result = $conn->query("SELECT * FROM yummywebbtb ORDER BY id DESC");
 
                         <th>Message</th>
 
+                        <th>Edit</th>
+
                         <th>Action</th>
 
                     </tr>
@@ -207,6 +220,10 @@ $result = $conn->query("SELECT * FROM yummywebbtb ORDER BY id DESC");
                                     <i class="fa fa-edit"></i>
 
                                 </a>
+
+                            </td>
+
+                            <td>
 
                                 <a href="delete_booking.php?id=<?= $row['id']; ?>" class="btn btn-danger btn-sm"
                                     onclick="return confirm('Delete Booking?')">
