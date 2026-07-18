@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $conn = new mysqli("localhost", "root", "", "yummywebsite");
 
 if ($conn->connect_error) {
@@ -10,9 +12,7 @@ if (isset($_POST['verify'])) {
     $userotp = $_POST['otp'];
 
     if (time() - $_SESSION['otp_time'] > 300) {
-
         die("OTP Expired");
-
     }
 
     if ($userotp == $_SESSION['otp']) {
